@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KulinerKito - Home</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+ 
      <!-- Font kustom dari Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
@@ -52,6 +51,7 @@
 /* Styling untuk heading 1/ */
 h1 {
     font-family: 'Pacifico', cursive;
+    color: #ff0000;
 }
 
 :root {
@@ -62,7 +62,7 @@ h1 {
     --nav-bg: rgba(0, 0, 0, 0.8);
     --nav-text: #ffffff;
 }
-    /* Tema gelap */
+/* Tema gelap */
 [data-theme="dark"] {
     --bg-color: #121212;
     --text-color: #ffffff;
@@ -72,7 +72,7 @@ h1 {
     --nav-text: #fff;
 }
 
-    /* Styling navigasi */
+/* Styling navigasi */
 nav {
     background: #333;
     padding: 10px;
@@ -96,7 +96,7 @@ nav ul li a {
     font-size: 18px;
     position: relative;
 }
-/* Efek hover pada menu */
+
 nav ul li a::after {
     content: "";
     display: block;
@@ -156,10 +156,6 @@ footer a {
     transition: opacity 0.3s;
 }
 </style>
-
-<body>
-    <a href="https://www.kulinerkito.com" class="btn" target="_blank">Website Utama</a>
-
     <!-- Header dan navigasi -->
     <header>
         <nav>
@@ -192,7 +188,7 @@ footer a {
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" 
              alt="YouTube" width="30">
     </a>
-    <a href="https://waridhaniaassyifa.github.io/Tugas-Pweb2/" target="_blank">
+    <a href="https://waridhaniaassyifa.github.io/TugasPweb2/" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" 
              alt="GitHub" width="30">
     </a>
@@ -208,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const savedTheme = localStorage.getItem("theme") || "light";
     root.setAttribute("data-theme", savedTheme);
-    updateTheme(savedTheme);
+    updateTheme(savedTheme); //untuk memperbarui tema yang dipilih
 
     themeToggle.addEventListener("click", () => {
         const newTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
@@ -221,15 +217,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (theme === "dark") {
             document.body.style.backgroundColor = "#121212";
             document.body.style.color = "#ffffff";
-            themeToggle.textContent = "💡"; // Ikon matahari
+            themeToggle.textContent = "💡"; // Ikon untuk ganti tema ke terang
         } else {
             document.body.style.backgroundColor = "#ffffff";
             document.body.style.color = "#000000";
-            themeToggle.textContent = "🌙"; // Ikon bulan
+            themeToggle.textContent = "🌙"; // Ikon untuk ganti tema ke gelap
         }
     }
 
-    // Tambahkan efek transisi saat berpindah halaman
+    // efek transisi saat berpindah halaman
     document.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", function(event) {
             event.preventDefault();
