@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terima Kasih - KulinerKito</title> 
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <style>
+    h1 {
+        font-family: 'Pacifico', cursive;
+        color: #ff0000;
+    }
+    body {
+    font-family: cursive, sans-serif;
+    }
+</style>    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="lokasi.html">Lokasi</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="thanks.html">❤️</a></li>
+                <li><button id="toggle-theme">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="thank-you-container">
+        <h1><em>~Terima Kasih~</em></h1>
+        <p>Terima kasih telah mengunjungi KulinerKito❤️</p>
+        <p>~Semoga harimu menyenangkan~</p>
+
+    <!-- button kembali ke home-->    
+        <a href="index.html" class="back-home">Home</a>
+    </main>
+
+    <footer>
+        <a href="https://instagram.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+                 alt="Instagram" width="30">
+        </a>
+        <a href="https://youtube.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" 
+                 alt="YouTube" width="30">
+        </a>
+        <a href="https://github.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" 
+                 alt="GitHub" width="30">
+        </a>
+        <p>&copy; 2025 KulinerKito</p>
+    </footer>
+    </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const themeToggle = document.getElementById("toggle-theme");
+            const root = document.documentElement;
+        
+            if (!themeToggle) return; // Mencegah error jika tombol tidak ditemukan
+        
+            const savedTheme = localStorage.getItem("theme") || "light";
+            root.setAttribute("data-theme", savedTheme);
+            updateTheme(savedTheme);
+        
+            themeToggle.addEventListener("click", () => {
+                const newTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+                root.setAttribute("data-theme", newTheme);
+                localStorage.setItem("theme", newTheme);
+                updateTheme(newTheme);
+            });
+        
+            function updateTheme(theme) {
+                if (theme === "dark") {
+                    document.body.style.backgroundColor = "#121212";
+                    document.body.style.color = "#ffffff";
+                    themeToggle.textContent = "💡"; // Ikon matahari
+                } else {
+                    document.body.style.backgroundColor = "#ffffff";
+                    document.body.style.color = "#000000";
+                    themeToggle.textContent = "🌙"; // Ikon bulan
+                }
+            }
+        
+            // Tambahkan efek transisi saat berpindah halaman
+            document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    document.body.classList.add("fade-out");
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 300);
+                });
+            });
+        });
+        </script>
+</html>
+

@@ -1,0 +1,90 @@
+/* Mengatur tampilan dasar untuk seluruh halaman */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #ffffff;
+    color: #000;
+    transition: background 0.3s, color 0.3s; /* efek transisi untuk perubahan tema */
+}
+
+/* Mengatur tampilan header */
+header {
+    background-color: #333;
+    padding: 15px 0;
+    text-align: center;/* agar konten berada ditengah */
+}
+/* Menghilangkan bullet points pada daftar navigasi */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+/* Menjadikan item navigasi dalam satu baris */
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+/* Styling untuk link navigasi */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+/* Styling button */
+button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+/* Styling footer */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+}
+/* Styling ikon yang bergambar dalam footer */
+footer img {
+    width: 30px;
+    margin: 10px;
+}
+/* Styling untuk mode tema gelap */
+[data-theme="dark"] {
+    background-color: #121212;
+    color: #fff;
+}
+/* Efek transisi saat halaman berpindah */
+body.fade-out {
+    opacity: 0;
+}
+/* Styling container di halaman ❤️ */
+.thank-you-container {
+    text-align: center;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+}
+/* Styling untuk judul ❤️ */
+.thank-you-container h1 {
+    font-size: 2.5em;
+    color: #ff0000;
+}
+
+.thank-you-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+/* Styling tombol kembali ke beranda */
+.back-home {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-decoration: none;
+    color: white;
+    background-color: #ff0000;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+/* Efek hover pada tombol kembali ke beranda */
+.back-home:hover {
+    background-color: #cc5500;
+}
