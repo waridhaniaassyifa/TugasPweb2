@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KulinerKito - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+     <!-- Font kustom dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    body {
+    font-family: cursive, sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: auto;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    flex-direction: column;
+    transition: background 0.3s, color 0.3s;
+}
+
+    /* Styling untuk header */
+    header {
+    background: var(--nav-bg);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.menu-container {
+    text-align: center; 
+}
+
+/* Styling gambar menu yang diperbesar */
+.menu-img {
+    width: 100%; 
+    max-width: 5000px; 
+    height: auto;
+    border-radius: 5px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9); 
+}
+
+/* Styling untuk heading 1/ */
+h1 {
+    font-family: 'Pacifico', cursive;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --button-bg: #2659ff;
+    --button-hover: #ff2d2d;
+    --nav-bg: rgba(0, 0, 0, 0.8);
+    --nav-text: #ffffff;
+}
+    /* Tema gelap */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --button-bg: #444;
+    --button-hover: #666;
+    --nav-bg: rgba(255, 255, 255, 0.2);
+    --nav-text: #fff;
+}
+
+    /* Styling navigasi */
+nav {
+    background: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--nav-text);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+/* Efek hover pada menu */
+nav ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--text-color);
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Styling tombol tema */
+#toggle-theme {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: inherit; /* Mengikuti warna teks agar tetap terlihat */
+    transition: color 0.3s;
+}
+
+main {
+    padding: 100px 20px;
+    margin-top: 60px; /* Sesuaikan dengan tinggi header */
+}
+
+
+.btn {
+    display: inline-block;
+    background: var(--button-bg);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: var(--button-hover);
+    transform: scale(1.05);
+}
+
+footer {
+    margin-top: 50px;
+}
+
+footer a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+/* Efek Transisi Halaman */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+</style>
+
+<body>
+    <a href="https://www.kulinerkito.com" class="btn" target="_blank">Website Utama</a>
+
+    <!-- Header dan navigasi -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="lokasi.html">Lokasi</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="thanks.html">❤️</a></li>
+                <li><button id="toggle-theme">💡</button></li>
+            </ul>
+        </nav>
+    </header>
+ 
+<!-- HomePage -->
+    <main>
+        <h1>~KulinerKito~</h1>
+        <p>Anda ingin tahu apa saja makanan khas Bengkulu?</p> 
+        <p>Yuk lihat di Menu!</p>
+        <img src="images/bengkulu.jpg" alt="Bengkulu" class="menu-img">
+    </main>
+
+<!-- Footer media sosial -->
+<footer>
+    <a href="https://www.instagram.com/afiyss__?igsh=MTc3eWpicHh2aWJ1" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+             alt="Instagram" width="30">
+    </a>
+    <a href="https://www.youtube.com/channel/UCHmfBKid53p8pvTe_ATxILA" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" 
+             alt="YouTube" width="30">
+    </a>
+    <a href="https://waridhaniaassyifa.github.io/Tugas-Pweb2/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" 
+             alt="GitHub" width="30">
+    </a>
+    <p>&copy; 2025 KulinerKito</p>
+</footer>
+  
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("toggle-theme");
+    const root = document.documentElement;
+
+    if (!themeToggle) return; // Mencegah error jika tombol tidak ditemukan
+
+    const savedTheme = localStorage.getItem("theme") || "light";
+    root.setAttribute("data-theme", savedTheme);
+    updateTheme(savedTheme);
+
+    themeToggle.addEventListener("click", () => {
+        const newTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateTheme(newTheme);
+    });
+
+    function updateTheme(theme) {
+        if (theme === "dark") {
+            document.body.style.backgroundColor = "#121212";
+            document.body.style.color = "#ffffff";
+            themeToggle.textContent = "💡"; // Ikon matahari
+        } else {
+            document.body.style.backgroundColor = "#ffffff";
+            document.body.style.color = "#000000";
+            themeToggle.textContent = "🌙"; // Ikon bulan
+        }
+    }
+
+    // Tambahkan efek transisi saat berpindah halaman
+    document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 300);
+        });
+    });
+});
+</script>
